@@ -1,4 +1,4 @@
-// js/templates/homeTemplate.js
+// js/templates/homeTemplate.js (Atualizado)
 
 /**
  * Template JavaScript para a página Home.
@@ -10,25 +10,9 @@ export const homeTemplate = () => `
         <p class="lead">Esta aplicação demonstra a manipulação de DOM e o conceito de Single Page Application (SPA) usando JavaScript modular.</p>
     </section>
 
-    <div class="row g-4">
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title text-success">Manipulação do DOM</h5>
-                    <p class="card-text">O conteúdo da página é totalmente injetado e atualizado pelo JavaScript, sem recarregar a página.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title text-danger">Validação de Formulário</h5>
-                    <p class="card-text">Confira o formulário para ver o sistema de validação de dados em ação com feedback ao usuário.</p>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="text-center mt-5">
-        <a href="#formulario" class="btn btn-lg btn-success">Ir para o Formulário</a>
+        <a href="#formulario" class="btn btn-lg btn-success">Ir para o Formulário</a> 
     </div>
 `;
+// Note: O link original que você me passou estava como 'form', 
+// mas o roteador espera 'formulario'. O código acima já usa '#formulario'.
