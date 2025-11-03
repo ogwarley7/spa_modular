@@ -19,18 +19,29 @@ const routes = {
 /**
  * Função principal do roteador. Analisa a hash e renderiza a view correspondente.
  */
+// ... (imports) ...
+
 function router() {
+    // 1. Obtém a hash da URL
     const path = window.location.hash.slice(1).toLowerCase() || 'home';
 
+    // 2. Encontra a função de template (aqui ele procura por 'formulario')
     const templateFunction = routes[path] || routes.default;
 
+    // 3. Gera o HTML e o renderiza
     const htmlContent = templateFunction();
     renderView(htmlContent);
 
-    // CHAMA O HANDLER SÓ DEPOIS DE INJETAR O HTML DO FORMULÁRIO
+    // 4. Se for a rota do formulário, deve anexar o manipulador de eventos
     if (path === 'formulario') {
-        setupFormHandler(); // ANEXA O LISTENER DE SUBMIT
+        setupFormHandler();
     }
+}
+
+// ... (Inicialização) ...
+
+// **CRUCIAL: Este listener garante que a função router() é chamada toda vez que o hash muda**
+window.addEventListener('hashchange', router);
 }
 
 
